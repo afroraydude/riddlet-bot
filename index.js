@@ -1,4 +1,12 @@
+
 class RiddletBot {
+  /**
+   * Creates an instance of RiddletBot.
+   * @param {string} server 
+   * @param {string} token 
+   * @param {function} messageHandler 
+   * @memberof RiddletBot
+   */
   constructor(server, token, messageHandler) {
     var keypair = require("keypair")
     this.pair = keypair()
@@ -12,6 +20,11 @@ class RiddletBot {
     this.socket = null
   }
 
+  /**
+   * Creates a server connection
+   * 
+   * @memberof RiddletBot
+   */
   ServerConnection() {
     const io = require("socket.io-client")
 
@@ -69,6 +82,13 @@ class RiddletBot {
     )
   }
 
+  /**
+   * Sends a message
+   * 
+   * @param {string} message 
+   * @param {string} room 
+   * @memberof RiddletBot
+   */
   SendMessage(message, room) {
     var messageData = {
       id: String(Date.now()),
@@ -85,6 +105,13 @@ class RiddletBot {
     this.socket.emit("message", messageData)
   }
 
+  /**
+   * Internal function to encrypt messages for sending to
+   * servers v11-alpha and up
+   * @param {object} message 
+   * @returns {string}
+   * @memberof RiddletBot
+   */
   EncryptMessage(message) {
     const crypto = require("crypto")
     const buffer = new Buffer(message.data)
@@ -92,12 +119,19 @@ class RiddletBot {
     return encrypted.toString("base64")
   }
 
+  /**
+   * Decryption equivalent of EncryptMessage
+   * 
+   * @param {any} message 
+   * @returns 
+   * @memberof RiddletBot
+   */
   DecryptMessage(message) {
     const crypto = require("crypto")
     try {
       key = key ? key : localStorage.getItem("pubkey")
       const buffer = new Buffer(message, "base64")
-      var decrypted = publicDecrypt(this.serverKey, buffer)
+      var decrypted = crypto.publicDecrypt(this.serverKey, buffer)
       return decrypted.toString("utf8")
     } catch (err) {
       return "decryption err"
