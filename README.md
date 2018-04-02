@@ -6,7 +6,7 @@ The official bot library for Riddlet, the anonymous chat application and server.
 
 [![NPM](https://nodei.co/npm/riddlet-bot.png)](https://www.npmjs.com/package/riddlet-bot)
 
-[![docs version](https://img.shields.io/badge/docs%20version-v0.11.0-orange.svg)](http://riddlet-docs.afroraydude.com/botinstall/)
+[![docs version](https://img.shields.io/badge/docs%20version-v0.11.0-orange.svg)](http://riddlet-docs.afroraydude.com/)
 
 ## Installation
 
