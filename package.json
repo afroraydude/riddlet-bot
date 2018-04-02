@@ -22,6 +22,7 @@
   "homepage": "https://github.com/afroraydude/riddlet-bot#readme",
   "dependencies": {
     "crypto": "^1.0.1",
-    "keypair": "^1.0.1"
+    "keypair": "^1.0.1",
+    "socket.io-client": "^2.1.0"
   }
 }
