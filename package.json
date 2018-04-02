@@ -1,6 +1,6 @@
 {
   "name": "riddlet-bot",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "The official bot library for Riddlet",
   "main": "index.js",
   "scripts": {
