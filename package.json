@@ -1,0 +1,27 @@
+{
+  "name": "riddlet-bot",
+  "version": "0.11.0",
+  "description": "The official bot library for Riddlet",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afroraydude/riddlet-bot.git"
+  },
+  "keywords": [
+    "chat",
+    "chatbot"
+  ],
+  "author": "afroraydude",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/afroraydude/riddlet-bot/issues"
+  },
+  "homepage": "https://github.com/afroraydude/riddlet-bot#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "keypair": "^1.0.1"
+  }
+}
