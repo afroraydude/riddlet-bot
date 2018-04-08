@@ -104,6 +104,14 @@ class RiddletBot {
     }
     this.socket.emit("message", messageData)
   }
+  
+  JoinRoom(room) {
+    this.socket.emit("join", room);
+  }
+  
+  LeaveRoom(room) {
+    this.socket.emit("leave", room);
+  }
 
   /**
    * Internal function to encrypt messages for sending to
